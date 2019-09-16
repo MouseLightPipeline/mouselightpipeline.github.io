@@ -13,7 +13,7 @@ The system is built from:
 In general it is preferable to run one of following systems for a given deployment directory and Compose project name. It is possible to change back and forth between the different deployment modes, however you must maintain the project name and associated between the scripts for each mode.
 
 Full System Mode
-^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^
 
 To manage the full system that includes all required services plus the worker frontend services for vega, canopus, and sirius use the up/stop/down/logs scripts. These scripts include all required Compose files for the full system.
 

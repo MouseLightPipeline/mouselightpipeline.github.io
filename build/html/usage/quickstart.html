@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Quickstart &mdash; Mouse Light Pipeline 1.4 documentation</title>
+  <title>Quickstart VM &mdash; Mouse Light Pipeline 1.4 documentation</title>
   
 
   
@@ -79,10 +79,26 @@
               
             
             
-              <p class="caption"><span class="caption-text">Contents</span></p>
-<ul class="current">
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Quickstart</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Quickstart VM</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-the-virtual-machine">Using the Virtual Machine</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#operate-the-example-project">Operate the Example Project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#operate-the-5x5x5-section-project">Operate the 5x5x5 Section Project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#processing-data-from-your-host-machine">Processing Data from your Host Machine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#frequently-asked-questions">Frequently Asked Questions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#where-is-the-output">Where is the output?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#why-is-the-classifer-stage-named-classifer-test-and-use-the-task-axon-test">Why is the Classifer stage named “Classifer (test)” and use the task “Axon Test”?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#how-do-i-add-more-workers">How do I add more workers?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#can-i-reset-the-sample-project-and-run-it-again">Can I reset the sample project and run it again?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#how-do-view-i-logs-for-the-services">How do view I logs for the services?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
             
@@ -128,7 +144,7 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Quickstart</li>
+      <li>Quickstart VM</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -147,8 +163,99 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="quickstart">
-<h1>Quickstart<a class="headerlink" href="#quickstart" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="quickstart-vm">
+<h1>Quickstart VM<a class="headerlink" href="#quickstart-vm" title="Permalink to this headline">¶</a></h1>
+<p>The Mouse Light Acquistion Pipeline virtual machine is a self-contained instance of the complete pipeline system. It contains two example projects that demonstrate pipeline processing and additional ones may be added. A VMWare version is available for download.  For other virtual machine applications, please consult the application documentation regarding importing or converting VMWare VM instances.</p>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Download and install VMWare Player, VirtualBox, or a similar application</li>
+<li>Download the virtual machine and unzip the archive (<a class="reference external" href="https://janelia.figshare.com/projects/MouseLight_Acquisition_Pipeline_VM/63212">https://janelia.figshare.com/projects/MouseLight_Acquisition_Pipeline_VM/63212</a>)</li>
+<li>Open the virtual machine in your host application and follow the instructions in the ReadMe included in the virtual machine archive or below</li>
+</ul>
+</div>
+<div class="section" id="using-the-virtual-machine">
+<h2>Using the Virtual Machine<a class="headerlink" href="#using-the-virtual-machine" title="Permalink to this headline">¶</a></h2>
+<p><strong>Please Note:</strong> The project titled “Example” will operate direcly from this virtual machine image.  However the project titled “Brain 5x5x5 Section” requires the input data to be downloaded to your host machine.</p>
+<ul class="simple">
+<li>Open and run the virtual machine in VMWare Player (free for individual or non-commercial user), Workstation, Fusion, or equivalent</li>
+<li>Log in to the virtual machine with user:pass mluser:pipeline</li>
+<li>View and control the activity pipeline system within the virtual machine by double-clicking the ViewPipeline desktop shortcut to open the web user interface</li>
+<li>View and control activity the pipeline system from your host machine or on your network by determining the virtual machine IP address (e.g., via <cite>ifconfig</cite>) and browsing to that <cite>http://&lt;vmip&gt;:6101</cite>.  For exampe, it may be something like <cite>http://192.168.1.105:6101</cite> on an internal network.</li>
+</ul>
+<div class="section" id="operate-the-example-project">
+<h3>Operate the Example Project<a class="headerlink" href="#operate-the-example-project" title="Permalink to this headline">¶</a></h3>
+<p>The example project is a small subsection of actual data where the source images have been truncated to allow for reasonably fast processing of tiles (seconds/minutes) for a small number of tiles to be able to view and explore the different stages of a functional pipeline project as well as to fit the required data into the virtual machine image without increasing the size greatly.</p>
+<p>By default the Example project is activated, however the individual data processing stages are not,  Otherwise they may finish processing before you have a chance to explore the system.  When you are ready, select the <cite>Stages</cite> panel from the left, select the <cite>Example</cite> project from the dropdown in the upper right of the panel and start the <cite>Line Fix</cite> stage.  After a few moments tiles will being processing (generally only one or two at time depending on the stage, again due to keeping the requirements of the virtual machine - in this case memory and CPU - relatively low).  The downstream stages can be turned on as well, for the full project to run, or you can manage stages on and off individually if you would like to follow tiles through the system.</p>
+</div>
+<div class="section" id="operate-the-5x5x5-section-project">
+<h3>Operate the 5x5x5 Section Project<a class="headerlink" href="#operate-the-5x5x5-section-project" title="Permalink to this headline">¶</a></h3>
+<p>The 5x5x5 project uses a subsection of actual data where the source images have <em>not</em> been altered in any way.  However to run this project you must download the data files to your host machine and place them in a shared folder to the virtual machine.</p>
+<ul class="simple">
+<li>Download the 5x5x5 project data</li>
+<li>Place the data in a directory named <cite>pipeline</cite> somewhere on the host machine</li>
+<li>In the virtual machine settings, add a shared folder by selecting that directory named <cite>pipeline</cite></li>
+</ul>
+<p>This will mount the data from the host machine in the virtual machine in a manner that is preconfigured in the 5x5x5 project.  Note that you can mount data in other ways (see below), however the example projects are preconfigured to work with this particular naming and mounting scheme.</p>
+</div>
+<div class="section" id="processing-data-from-your-host-machine">
+<h3>Processing Data from your Host Machine<a class="headerlink" href="#processing-data-from-your-host-machine" title="Permalink to this headline">¶</a></h3>
+<p>Any folders added as a shared folder for the virtual machine will appear under <cite>/external/</cite> to pipeline services in the virtual machine in and in their respective containers.  For example, the 5x5x5 project above is pre-configured to read data from <cite>/external/pipeline/018-08-01_raw-5x5x5-tileid-13024</cite> by sharing a directory named <cite>pipeline</cite> on the host with the 5x5x5 data (in a directory titled <cite>018-08-01_raw-5x5x5-tileid-13024</cite>).  If you were to also share a directory named <cite>testdata</cite> in the virtual machine settings, its contents would be accessible to the pipeline services as <cite>/external/testdata</cite>.</p>
+</div>
+<div class="section" id="frequently-asked-questions">
+<h3>Frequently Asked Questions<a class="headerlink" href="#frequently-asked-questions" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="where-is-the-output">
+<h4>Where is the output?<a class="headerlink" href="#where-is-the-output" title="Permalink to this headline">¶</a></h4>
+<p>The output from the <cite>Example</cite> project is located in <cite>/data/pipeline-output/sample</cite>.  There is an auto-generated directory for each stage labeled with the stage depth and name.</p>
+<p>The output from the <cite>5x5x5</cite> project is in a directory named <cite>output</cite> in the same <cite>pipeline</cite> directory that was mounted with the input data.</p>
+<p>These settings can be changed by changing the output location for each of the stages in the projects.</p>
+</div>
+<div class="section" id="why-is-the-classifer-stage-named-classifer-test-and-use-the-task-axon-test">
+<h4>Why is the Classifer stage named “Classifer (test)” and use the task “Axon Test”?<a class="headerlink" href="#why-is-the-classifer-stage-named-classifer-test-and-use-the-task-axon-test" title="Permalink to this headline">¶</a></h4>
+<p>The <cite>Example</cite> project uses modified input data that only contains 81 tiles and whose input tile images are reduced in size.  This makes the project small enough to include in the virtual machine and provide a functional example.</p>
+<p>As a result, the stage classifier also uses a modified ilastik project that does not do the actual classifier stage for real samples.  The overall behavior of the stage, and the project is identical to using the actual classifier stage.  For real sample processing, it is possible to duplicate the sample project and simply change the task used in the duplicated classifier stage to “Axon UInt16” (the real classifier task) rather than the “Axon Test” task.</p>
+</div>
+<div class="section" id="how-do-i-add-more-workers">
+<h4>How do I add more workers?<a class="headerlink" href="#how-do-i-add-more-workers" title="Permalink to this headline">¶</a></h4>
+<ul>
+<li><p class="first">Clone or copy additional instance of the pipeline virtual machine</p>
+<blockquote>
+<div><ul class="simple">
+<li>Note that if you do a normal copy you may need to use the facilities in your virtual machine application (VMWare, or VirtualBox) to generate a new MAC address for the copy (the Clone command in VMWare does this automatically)</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">In any worker-only copy, modify the system to not launch the core pipeline services at startup</p>
+<blockquote>
+<div><ul class="simple">
+<li><cite>sudo systemctl disable pipeline</cite></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Update the worker-only copy to use your original instance with the full pipeline services running</p>
+<blockquote>
+<div><ul class="simple">
+<li>In <cite>/data/pipeline-systems/pipeline-worker</cite> open <cite>options.sh in</cite> your editor of choice (e.g., nano is installed)</li>
+<li>Change <cite>PIPELINE_CORE_SERVICES_HOST</cite> and <cite>PIPELINE_API_HOST</cite> from <cite>172.17.0.1</cite> to the IP address or hostname of the original virtual machine running the full pipeline services (use <cite>ifconfig</cite> in the virtual machine or similar)</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<p>For a third or more worker, duplicate the worker-only instance and only the first step is necessary.</p>
+</div>
+<div class="section" id="can-i-reset-the-sample-project-and-run-it-again">
+<h4>Can I reset the sample project and run it again?<a class="headerlink" href="#can-i-reset-the-sample-project-and-run-it-again" title="Permalink to this headline">¶</a></h4>
+<p>Yes.  On the Stages panel, select the first stage in the project (“Line Fix” for the sample project) in the stage table.  With the stage selected, choose Completed from the drop down in the upper left the stage tile list below the stage table.</p>
+<p>Choose “Resubmit All” from the upper right of the tile list.  If you have made changes and some tiles have failed, also select Failed from the drop down in the upper left and “Resubmit All” again.</p>
+<p>It will take a few minutes for the first stage tiles to revert to “Queued” status and for that status to propogate down through the rest of the stages.</p>
+<p>A second option is to duplicate the project, which will create a second project and a full second set of stages.  You will then need to adjust the root location for the project (and/or copy the input file to that location), and likely will want to change the stage output locations from their defaul (“copy” appended to the original).</p>
+</div>
+<div class="section" id="how-do-view-i-logs-for-the-services">
+<h4>How do view I logs for the services?<a class="headerlink" href="#how-do-view-i-logs-for-the-services" title="Permalink to this headline">¶</a></h4>
+<p>In <cite>/data/pipeline-systems/pipeline/pipeline-deploy-services</cite> the script <cite>./pipeline-logs.sh</cite> will load a Docker container with access to the log storage.  <cite>cd /var/log/pipeline</cite> to review logs from the pipeline-api, pipeline-scheduler, and pipelient-client services.</p>
+</div>
+</div>
+</div>
 </div>
 
 
