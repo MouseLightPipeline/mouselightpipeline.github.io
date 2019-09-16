@@ -3,7 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Mouse Light Pipeline's documentation!
+Welcome to Mouse Light Pipeline
 ================================================
 
 .. toctree::
@@ -13,11 +13,3 @@ Welcome to Mouse Light Pipeline's documentation!
    usage/installation
    usage/quickstart
 
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
