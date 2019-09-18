@@ -13,7 +13,7 @@ Mouse Light Pipeline is a collection of services that facilitate the multi-step 
 Although similar to other computation pipelines, the Mouse Light Pipeline is designed around the concept of a 2-D or 3-D lattice of work units and manages the bookkeeping of spatially related elements.  This simplifies tasks that require patterns of elements such as using adjacent tiles in one or more planes.  The second significant feature is the integrated real-time monitoring of the pipeline with the ability to pause and resume stages of the pipeline and the porject itself independently.  This includes multiple ways to view the status of each stage (waiting, in process, complete) each plane (which work units are in what state for which stage), and for each work unit (history or past and, if applicable, current processing attempts).
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 0
 
    usage/installation
    usage/quickstart
